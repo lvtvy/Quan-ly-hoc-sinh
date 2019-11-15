@@ -18,7 +18,6 @@ public class Main extends Application {
             account1.setName("31000000");
             account1.setEmail("31000000@gmail.com");
             account1.setPassWord("31000000");
-
             Memory.getInstance().getAccounts().add(account1);
 
             Account account2 = new Account();
@@ -27,7 +26,6 @@ public class Main extends Application {
             account2.setName("32000000");
             account2.setEmail("32000000@gmail.com");
             account2.setPassWord("32000000");
-
             Memory.getInstance().getAccounts().add(account2);
         }
         launch(args);
@@ -35,19 +33,13 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
         try {
-
             Parent root = FXMLLoader.load(getClass().getResource("/sample/fileFXML/welcome.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-
             primaryStage.show();
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }
