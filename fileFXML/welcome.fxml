@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="450.0" prefWidth="610.0" style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerWelcome">
+   <children>
+      <Label layoutX="62.0" layoutY="45.0" text="Welcome" textFill="#140ae4">
+         <font>
+            <Font name="Sitka Display Bold Italic" size="55.0" />
+         </font>
+      </Label>
+      <Label layoutX="110.0" layoutY="142.0" text="Login code">
+         <font>
+            <Font name="Sitka Display" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="115.0" layoutY="196.0" text="Password">
+         <font>
+            <Font name="Sitka Display" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginCodeText" layoutX="234.0" layoutY="138.0" prefHeight="31.0" prefWidth="340.0" promptText="Login  code" />
+      <PasswordField fx:id="passWordText" layoutX="234.0" layoutY="192.0" prefHeight="31.0" prefWidth="340.0" promptText="Password" />
+      <CheckBox layoutX="271.0" layoutY="243.0" mnemonicParsing="false" text="Remember me">
+         <font>
+            <Font name="Sitka Display" size="20.0" />
+         </font>
+      </CheckBox>
+      <Button layoutX="466.0" layoutY="295.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="42.0" prefWidth="97.0" text="Sign In">
+         <font>
+            <Font name="Sitka Display" size="22.0" />
+         </font>
+      </Button>
+      <Label layoutX="153.0" layoutY="368.0" text="Don't have account?">
+         <font>
+            <Font name="Sitka Display Italic" size="20.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="337.0" layoutY="363.0" onAction="#SignUp" text="Sign Up" textFill="#1e09fc">
+         <font>
+            <Font name="Sitka Display Bold" size="20.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

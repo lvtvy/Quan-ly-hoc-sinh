@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="911.0" prefWidth="1229.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerTeacher">
+   <children>
+      <Label fx:id="label" alignment="CENTER" layoutX="-1.0" layoutY="1.0" prefHeight="88.0" prefWidth="1229.0" text="QUẢN LÝ SINH VIÊN" textFill="#0b12eb">
+         <font>
+            <Font name="Palatino Linotype Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutY="89.0" onMouseClicked="#clickItem" prefHeight="426.0" prefWidth="1238.0">
+        <columns>
+          <TableColumn fx:id="selectColumn" prefWidth="56.0" resizable="true" text="Select" />
+          <TableColumn fx:id="idColumn" prefWidth="92.0" text="ID Sinh viên" />
+            <TableColumn fx:id="nameColumn" prefWidth="152.0" text="Họ tên" />
+            <TableColumn fx:id="deptColumn" prefWidth="100.0" text="Khoa" />
+            <TableColumn fx:id="classColumn" prefWidth="100.0" text="Lớp" />
+            <TableColumn fx:id="dateColumn" prefWidth="100.0" text="Ngày sinh" />
+            <TableColumn fx:id="genderColumn" prefWidth="100.0" text="Giới tính" />
+            <TableColumn fx:id="PointDiligenceCol" prefWidth="147.0" text="Điểm chuyên cần" />
+            <TableColumn fx:id="PointMidtermCol" prefWidth="119.0" text="Điểm giữa kì" />
+            <TableColumn fx:id="PointEndtermCol" prefWidth="129.0" text="Điểm cuối kì" />
+            <TableColumn fx:id="PointTotalCol" prefWidth="142.0" text="Điểm trung bình" />
+        </columns>
+      </TableView>
+      <HBox alignment="BASELINE_CENTER" layoutX="4.0" layoutY="525.0" prefHeight="54.0" prefWidth="992.0" spacing="70.0">
+         <children>
+            <CheckBox alignment="CENTER" mnemonicParsing="false" prefHeight="27.0" prefWidth="140.0" text="Select all">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </CheckBox>
+            <Label alignment="CENTER" prefHeight="27.0" prefWidth="78.0" text="Sắp xếp">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="sort" prefHeight="31.0" prefWidth="165.0" />
+            <Button fx:id="increase" mnemonicParsing="false" onAction="#SapXepTangDan" prefHeight="39.0" prefWidth="121.0" text="A -&gt; Z">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="decrease" lineSpacing="10.0" mnemonicParsing="false" onAction="#SapXepGiamDan" prefHeight="39.0" prefWidth="115.0" text="Z -&gt; A">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="808.0" layoutY="579.0" prefHeight="327.0" prefWidth="171.0" spacing="45.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#add" prefHeight="39.0" prefWidth="142.0" text="Thêm">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#edit" prefHeight="39.0" prefWidth="142.0" text="Sửa ">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button lineSpacing="50.0" mnemonicParsing="false" onAction="#delete" prefHeight="39.0" prefWidth="142.0" text="Xóa">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#reset" prefHeight="39.0" prefWidth="142.0" text="Reset">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <HBox fx:id="hbox" layoutX="4.0" layoutY="579.0" prefHeight="327.0" prefWidth="774.0" spacing="30.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="327.0" prefWidth="112.0" spacing="37.0">
+               <children>
+                  <Label text="Họ tên">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Mã khoa">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Mã lớp">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Ngày sinh">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Giới tính">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="327.0" prefWidth="241.0" spacing="30.0">
+               <children>
+                  <TextField fx:id="nameText" />
+                  <ComboBox fx:id="dept" onAction="#setValueClass" prefHeight="31.0" prefWidth="235.0" />
+                  <ComboBox fx:id="clazz" prefHeight="31.0" prefWidth="228.0" />
+                  <DatePicker fx:id="date" prefHeight="31.0" prefWidth="236.0" />
+                  <ComboBox fx:id="gender" prefHeight="31.0" prefWidth="233.0" />
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="327.0" prefWidth="155.0" spacing="40.0">
+               <children>
+                  <Label prefHeight="27.0" prefWidth="112.0" text="Mã sinh viên">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label text="Điểm chuyên cần">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="162.0" text="Điểm giữa kì">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="194.0" text="Điểm cuối kì">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="16.0" layoutY="225.0" text="Điểm trung bình">
+                     <font>
+                        <Font name="Sitka Display" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" prefHeight="327.0" prefWidth="232.0" spacing="30.0">
+               <children>
+                  <TextField fx:id="idText" />
+                  <TextField fx:id="pointDiligence" layoutX="10.0" layoutY="107.0" />
+                  <TextField fx:id="pointMidterm" layoutX="10.0" layoutY="244.0" />
+                  <TextField fx:id="pointEndterm" layoutX="10.0" layoutY="206.0" />
+                  <TextField fx:id="pointTotal" layoutX="10.0" layoutY="128.0" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox fx:id="vBox" alignment="CENTER" layoutX="968.0" layoutY="525.0" prefHeight="359.0" prefWidth="264.0" spacing="40.0">
+         <children>
+            <Label fx:id="dateTime" alignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="hi">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#goBack" text="Đăng xuất " textFill="#3b0cf5">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

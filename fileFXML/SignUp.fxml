@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerSignUp">
+    <children>
+        <Label layoutX="54.0" layoutY="34.0" text="Registration Form" textFill="#334488">
+            <font>
+                <Font name="Bodoni MT Bold Italic" size="50.0" />
+            </font>
+        </Label>
+        <Label layoutX="80.0" layoutY="127.0" text="User name ">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="82.0" layoutY="240.0" text="Email">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="78.0" layoutY="296.0" text="Password">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <Label layoutX="47.0" layoutY="358.0" text="Confirm pasword">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nameText" layoutX="208.0" layoutY="123.0" prefHeight="31.0" prefWidth="295.0" promptText="Enter User name " />
+        <TextField fx:id="emailText" layoutX="208.0" layoutY="238.0" prefHeight="31.0" prefWidth="295.0" promptText="Enter email" />
+        <Button layoutX="104.0" layoutY="455.0" mnemonicParsing="false" onAction="#Add" prefHeight="39.0" prefWidth="429.0" text="Sign up" textAlignment="CENTER" textFill="#334488">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+        <Hyperlink layoutX="39.0" layoutY="534.0" onAction="#goBack" text="Back" textFill="#334488">
+            <font>
+                <Font name="System Italic" size="18.0" />
+            </font>
+        </Hyperlink>
+        <PasswordField fx:id="passText" layoutX="207.0" layoutY="294.0" prefHeight="31.0" prefWidth="295.0" promptText="Enter Password" />
+        <PasswordField layoutX="207.0" layoutY="356.0" prefHeight="31.0" prefWidth="295.0" promptText="Confirm Password" />
+        <Button layoutX="572.0" layoutY="-1.0" mnemonicParsing="false" text="X" textFill="#f51717">
+            <font>
+                <Font name="System Bold" size="15.0" />
+            </font>
+        </Button>
+      <Label layoutX="81.0" layoutY="180.0" text="Login code">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="codeText" layoutX="208.0" layoutY="178.0" prefHeight="31.0" prefWidth="295.0" promptText="Enter login code" />
+    </children>
+</AnchorPane>

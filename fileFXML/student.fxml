@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="559.0" prefWidth="1240.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.ControllerStudent">
+   <children>
+      <Label alignment="CENTER" layoutY="-1.0" prefHeight="92.0" prefWidth="1030.0" text="THÔNG TIN SINH VIÊN" textFill="#0a37eb">
+         <font>
+            <Font name="Sitka Display Bold Italic" size="40.0" />
+         </font>
+      </Label>
+      <TabPane layoutY="91.0" prefHeight="469.0" prefWidth="979.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tab1" text="Thông tin cá nhân">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <HBox prefHeight="346.0" prefWidth="979.0" spacing="20.0">
+                           <children>
+                              <VBox alignment="CENTER" prefHeight="346.0" prefWidth="169.5" spacing="50.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="23.0" prefWidth="85.0" text="Họ tên">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="74.0" layoutY="172.0" prefHeight="23.0" prefWidth="117.0" text="Mã sinh viên">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="58.0" layoutY="208.0" prefHeight="23.0" prefWidth="117.0" text="Email">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="58.0" layoutY="245.0" prefHeight="23.0" prefWidth="117.0" text="Mật khẩu">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="346.0" prefWidth="300.0" spacing="45.0">
+                                 <children>
+                                    <TextField fx:id="nameText" />
+                                    <TextField fx:id="idText" />
+                                    <TextField fx:id="emailText" />
+                                    <PasswordField fx:id="passwordText" />
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="346.0" prefWidth="169.5" spacing="50.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="23.0" prefWidth="85.0" text="Giới tính">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="74.0" layoutY="172.0" prefHeight="23.0" prefWidth="117.0" text="Ngày sinh">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="58.0" layoutY="208.0" prefHeight="23.0" prefWidth="117.0" text="Khoa">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label alignment="CENTER" layoutX="58.0" layoutY="245.0" prefHeight="23.0" prefWidth="117.0" text="Lớp">
+                                       <font>
+                                          <Font name="Sitka Display" size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="CENTER" prefHeight="346.0" prefWidth="300.0" spacing="45.0">
+                                 <children>
+                                    <ComboBox fx:id="gender" prefHeight="31.0" prefWidth="293.0" />
+                                    <DatePicker fx:id="DOB" prefWidth="293.0" />
+                                    <ComboBox fx:id="dept" layoutX="11.0" layoutY="206.0" prefHeight="31.0" prefWidth="293.0" />
+                                    <ComboBox fx:id="clazz" layoutX="11.0" layoutY="244.0" prefHeight="31.0" prefWidth="293.0" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <Button layoutX="605.0" layoutY="368.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="275.0" text="Chỉnh sửa">
+                           <font>
+                              <Font name="Sitka Display" size="20.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Bảng điểm">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="979.0">
+                     <children>
+                        <TableView fx:id="table" prefHeight="429.0" prefWidth="979.0">
+                          <columns>
+                            <TableColumn fx:id="idSubCol" prefWidth="130.0" text="Mã học phần" />
+                              <TableColumn fx:id="nameSubCol" prefWidth="189.0" text="Tên học phần" />
+                              <TableColumn fx:id="numCreditCol" prefWidth="79.0" text="Số tín chỉ" />
+                              <TableColumn fx:id="PointDiligenceCol" prefWidth="131.0" text="Điểm chuyên cần" />
+                              <TableColumn fx:id="PointMidtermCol" prefWidth="111.0" text="Điểm giữa kì" />
+                              <TableColumn fx:id="PointEndtermCol" prefWidth="107.0" text="Điểm cuối kì" />
+                              <TableColumn fx:id="PointTotalCol" prefWidth="140.0" text="Điểm trung bình" />
+                              <TableColumn prefWidth="91.0" text="Xếp loại" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <VBox fx:id="vBox" alignment="CENTER" layoutX="976.0" layoutY="91.0" prefHeight="469.0" prefWidth="264.0" spacing="40.0">
+         <children>
+            <Label fx:id="dateTime" alignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="hi">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#goBack" text="Đăng xuất " textFill="#3b0cf5">
+               <font>
+                  <Font name="System Italic" size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
