@@ -8,20 +8,35 @@ public class Subject {
     private float pointDiligence;
     private float pointMidterm;
     private float pointEndterm;
-    private float pointTotal;
 
     public Subject() {
     }
 
-    public Subject(String id, String name, int numCredit, float pointDiligence, float pointMidterm, float pointEndterm, float pointTotal) {
+    public Subject(String id, String name, int numCredit, float pointDiligence, float pointMidterm, float pointEndterm) {
         this.id = id;
         this.name = name;
         this.numCredit = numCredit;
         this.pointDiligence = pointDiligence;
         this.pointMidterm = pointMidterm;
         this.pointEndterm = pointEndterm;
-        this.pointTotal = pointTotal;
     }
+
+    public float getPointTotal() {
+        return (float) (getPointDiligence() * 0.1 + getPointMidterm() * 0.3 + getPointEndterm() * 0.6);
+    }
+
+//    public char show(){
+//        if (getPointTotal() >= 8.5){
+//            return 'A';
+//        } else if (getPointTotal() >= 7.0){
+//            return 'B';
+//        } else if (getPointTotal() >= 5.5) {
+//            return 'C';
+//        } else if (getPointTotal() >= 4.5){
+//            return 'D';
+//        }
+//        return 'F';
+//    }
 
     public String getId() {
         return id;
@@ -69,13 +84,5 @@ public class Subject {
 
     public void setPointEndterm(float pointEndterm) {
         this.pointEndterm = pointEndterm;
-    }
-
-    public float getPointTotal() {
-        return pointTotal;
-    }
-
-    public void setPointTotal(float pointTotal) {
-        this.pointTotal = pointTotal;
     }
 }

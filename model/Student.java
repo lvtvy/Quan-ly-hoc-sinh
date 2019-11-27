@@ -1,7 +1,5 @@
 package sample.model;
 
-import javafx.scene.control.PasswordField;
-
 public class Student {
 
     private String name;
@@ -14,13 +12,13 @@ public class Student {
     private float pointDiligence;
     private float pointMidterm;
     private float pointEndterm;
-    private float pointTotal;
+    //    private float pointTotal;
     private boolean select;
 
     private String email;
     private String password;
 
-    public Student(String name, int id, String dept, String clazz, String date, String gender, float pointDiligence, float pointMidterm, float pointEndterm, float pointTotal) {
+    public Student(String name, int id, String dept, String clazz, String date, String gender, float pointDiligence, float pointMidterm, float pointEndterm) {
         this.name = name;
         this.id = id;
         this.dept = dept;
@@ -30,7 +28,6 @@ public class Student {
         this.pointDiligence = pointDiligence;
         this.pointMidterm = pointMidterm;
         this.pointEndterm = pointEndterm;
-        this.pointTotal = pointTotal;
     }
 
     public Student(String name, int id, String dept, String clazz, String date, String gender, String email, String password) {
@@ -119,13 +116,18 @@ public class Student {
         this.pointEndterm = pointEndterm;
     }
 
+//    public float getPointTotal() {
+//        return pointTotal;
+//    }
+//
+//    public void setPointTotal(float pointTotal) {
+//        this.pointTotal = pointTotal;
+//    }
+
     public float getPointTotal() {
-        return pointTotal;
+        return (float) (getPointDiligence() * 0.1 + getPointMidterm() * 0.3 + getPointEndterm() * 0.6);
     }
 
-    public void setPointTotal(float pointTotal) {
-        this.pointTotal = pointTotal;
-    }
 
     public boolean isSelect() {
         return select;
@@ -150,4 +152,5 @@ public class Student {
     public void setPassword(String password) {
         this.password = password;
     }
+
 }

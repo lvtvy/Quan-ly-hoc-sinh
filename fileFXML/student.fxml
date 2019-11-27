@@ -96,7 +96,8 @@
                               </VBox>
                            </children>
                         </HBox>
-                        <Button layoutX="605.0" layoutY="368.0" mnemonicParsing="false" prefHeight="46.0" prefWidth="275.0" text="Chỉnh sửa">
+                         <Button layoutX="605.0" layoutY="368.0" onAction="#edit" mnemonicParsing="false"
+                                 prefHeight="46.0" prefWidth="275.0" text="Chỉnh sửa">
                            <font>
                               <Font name="Sitka Display" size="20.0" />
                            </font>
@@ -104,7 +105,7 @@
                      </children></AnchorPane>
             </content>
           </Tab>
-          <Tab text="Bảng điểm">
+            <Tab text="Kết quả học tập">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="421.0" prefWidth="979.0">
                      <children>
@@ -113,11 +114,10 @@
                             <TableColumn fx:id="idSubCol" prefWidth="130.0" text="Mã học phần" />
                               <TableColumn fx:id="nameSubCol" prefWidth="189.0" text="Tên học phần" />
                               <TableColumn fx:id="numCreditCol" prefWidth="79.0" text="Số tín chỉ" />
-                              <TableColumn fx:id="PointDiligenceCol" prefWidth="131.0" text="Điểm chuyên cần" />
-                              <TableColumn fx:id="PointMidtermCol" prefWidth="111.0" text="Điểm giữa kì" />
-                              <TableColumn fx:id="PointEndtermCol" prefWidth="107.0" text="Điểm cuối kì" />
-                              <TableColumn fx:id="PointTotalCol" prefWidth="140.0" text="Điểm trung bình" />
-                              <TableColumn prefWidth="91.0" text="Xếp loại" />
+                              <TableColumn fx:id="PointDiligenceCol" prefWidth="168.0" text="Điểm chuyên cần"/>
+                              <TableColumn fx:id="PointMidtermCol" prefWidth="137.0" text="Điểm giữa kì"/>
+                              <TableColumn fx:id="PointEndtermCol" prefWidth="116.0" text="Điểm cuối kì"/>
+                              <TableColumn fx:id="PointTotalCol" prefWidth="158.0" text="Điểm trung bình"/>
                           </columns>
                         </TableView>
                      </children>

@@ -105,7 +105,7 @@ public class ControllerTeacher implements Initializable {
         sort.setItems(sortList);
 
         students = FXCollections.observableArrayList(
-                new Student("Dương Văn A", 001, "CNTT", "CNTT1", "2016-06-03", "Nam", 10, 10, 10, 10)
+                new Student("Dương Văn A", 001, "CNTT", "CNTT1", "2016-06-03", "Nam", 10, 10, 10)
         );
 
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -182,7 +182,8 @@ public class ControllerTeacher implements Initializable {
         student.setPointDiligence(Float.parseFloat(pointDiligence.getText()));
         student.setPointMidterm(Float.parseFloat(pointMidterm.getText()));
         student.setPointEndterm(Float.parseFloat(pointEndterm.getText()));
-        student.setPointTotal(Float.parseFloat(pointTotal.getText()));
+//        student.setPointTotal(Float.parseFloat(pointTotal.getText()));
+        student.getPointTotal();
         boolean check = false;
         for (Student st : students) {
             if (student.getId() == st.getId()) {
@@ -207,24 +208,14 @@ public class ControllerTeacher implements Initializable {
     @FXML
     public void edit(ActionEvent event) {
         Student selected = table.getSelectionModel().getSelectedItem();
-//        selected.setId(Integer.parseInt(idText.getText()));
         selected.setName(nameText.getText());
         selected.setDept(dept == null ? deptList.get(0) : dept.getValue().toString());
-//        selected.setClazz(dept == null ? ITList.get(0) : clazz.getValue().toString());
-//        if (dept.getValue().toString().equals("CNTT")){
-//            clazz.setItems(ITList);
-//            clazz.getItems();
-//        }
-//        if (dept.getValue().toString().equals("Toán")){
-//            clazz.setItems(MathList);
-//            clazz.getItems();
-//        }
         selected.setDate(date.getValue().toString());
         selected.setGender(gender == null ? genderList.get(0) : gender.getValue().toString());
         selected.setPointDiligence(Float.parseFloat(pointDiligence.getText()));
         selected.setPointMidterm(Float.parseFloat(pointMidterm.getText()));
         selected.setPointEndterm(Float.parseFloat(pointEndterm.getText()));
-        selected.setPointTotal(Float.parseFloat(pointTotal.getText()));
+//        selected.setPointTotal(Float.parseFloat(pointTotal.getText()));
 
         table.getItems().set(table.getSelectionModel().getSelectedIndex(), selected);
     }
@@ -257,7 +248,7 @@ public class ControllerTeacher implements Initializable {
                 pointDiligence.setText(String.valueOf(selected.getPointDiligence()));
                 pointMidterm.setText(String.valueOf(selected.getPointMidterm()));
                 pointEndterm.setText(String.valueOf(selected.getPointEndterm()));
-                pointTotal.setText(String.valueOf(selected.getPointTotal()));
+//                pointTotal.setText(String.valueOf(selected.getPointTotal()));
             }
         });
     }

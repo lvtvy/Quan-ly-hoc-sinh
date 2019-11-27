@@ -19,15 +19,16 @@ import javafx.util.Duration;
 import sample.model.Student;
 import sample.model.Subject;
 
-import javax.xml.soap.Text;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 public class ControllerStudent implements Initializable {
+
 
     @FXML
     private TableColumn<Subject, String> idSubCol;
@@ -60,9 +61,6 @@ public class ControllerStudent implements Initializable {
     private TableView table;
 
     @FXML
-    private Tab tab1;
-
-    @FXML
     private TextField idText;
 
     @FXML
@@ -88,22 +86,13 @@ public class ControllerStudent implements Initializable {
 
     private ObservableList<Subject> subjects;
 
-    public void goBack(ActionEvent e) throws IOException {
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/sample/fileFXML/welcome.fxml"));
-        Parent sampleParent = loader.load();
-        Scene scene = new Scene(sampleParent);
-        stage.setScene(scene);
-        stage.setResizable(false);
-    }
-
+    private static Student student;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         subjects = FXCollections.observableArrayList(
-                new Subject("1","C++",4,10,10,10,10),
-                new Subject("2","Java",4,9,9,9,9)
+                new Subject("1", "C++", 4, 10, 10, 9),
+                new Subject("2", "Java", 4, 9, 9, 10)
         );
 
         idSubCol.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -125,7 +114,7 @@ public class ControllerStudent implements Initializable {
 
         hi.setText("Xin chào sinh viên");
 
-        Student student = new Student("Nguyễn Văn B",1,"CNTT","CNTT1","2000-02-26","Nam","vnb@gmail.com","123456789");
+        student = new Student("Nguyễn Văn B", 1, "CNTT", "CNTT1", "2000-02-26", "Nam", "nvb@gmail.com", "123456789");
 
         idText.setText(String.valueOf(student.getId()));
         nameText.setText(student.getName());
@@ -135,5 +124,21 @@ public class ControllerStudent implements Initializable {
         DOB.setValue(LocalDate.parse(student.getDate()));
         dept.setValue(student.getDept());
         clazz.setValue(student.getClazz());
+    }
+
+    public void goBack(ActionEvent e) throws IOException {
+        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/sample/fileFXML/welcome.fxml"));
+        Parent sampleParent = loader.load();
+        Scene scene = new Scene(sampleParent);
+        stage.setScene(scene);
+        stage.setResizable(false);
+    }
+
+    public void edit(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Bạn không có quyền chỉnh sửa! ");
+        alert.showAndWait();
     }
 }
